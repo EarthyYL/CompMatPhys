@@ -1,0 +1,187 @@
+\documentclass[11pt]{article}
+
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{microtype}
+\usepackage{url}
+\geometry{margin=1in}
+
+\DeclareSIUnit\calorie{cal}
+\DeclareSIUnit\kcal{\kilo\calorie}
+\DeclareSIUnit\atm{atm}
+
+\title{Room Heating from the Cohesive Energy of Rocksalt}
+\author{Yao Luo}
+\date{26 July 2026}
+
+\begin{document}
+\maketitle
+
+\section{Problem}
+
+\begin{quote}
+\itshape
+Imagine yourself to be in a room, say a typical living room or class room. You
+get a box with free sodium atoms (Na) and another box with free chlorine atoms
+(Cl). You connect the two boxes, and let the atoms react with each other. The
+result is one teaspoon of rocksalt. How much has the temperature of the room
+increased? Assume the cohesive energy of rocksalt to be 187 kcal/mol.
+\end{quote}
+
+\section{Model and assumptions}
+
+\begin{enumerate}
+  \item The boxes are thin, indestructible, perfectly conducting, and of
+        negligible heat capacity and volume. All energy released by the reaction is therefore transferred to the room environment.
+  \item The room is sealed and perfectly insulated, so the air is heated at
+        constant volume and none of the heat escapes to the walls.
+  \item The room's dimensions are approximated as that of a typical university
+        classroom (\qty{50}{\meter\squared} floor area, \qty{3}{\meter} high).
+  \item The air is an ideal diatomic gas, with $C_V = \tfrac{5}{2}R
+    = \qty{20.8}{\joule\per\mole\per\kelvin}$.
+  \item The reactants begin as free neutral atoms and end as crystalline NaCl, with the reaction going to completion, so the full cohesive energy is released as heat.
+  \item The heat capacity of the salt itself is negligible against that of the air.
+\end{enumerate}
+
+\begin{table}[htbp]
+  \centering
+  \caption{Input quantities.}\label{tab:givens}
+  \begin{tabular}{llS[table-format=3.2]ll}
+    \toprule
+    Quantity & Symbol & {Value} & Unit & Source \\
+    \midrule
+    Room volume            & $V$          & 150   & \unit{\meter\cubed} & [assumed] \\
+    Ambient temperature    & $T_0$        & 300   & \unit{\kelvin} & [assumed] \\
+    Ambient pressure       & $P$          & 1     & \unit{\atm} & [assumed] \\
+    Molar heat capacity of air & $C_V$    & 20.8  & \unit{\joule\per\mole\per\kelvin} & \cite{feynman} \\
+    \midrule
+    Volume of one teaspoon & $V_\text{s}$ & 4.9   & \unit{\milli\litre} & \cite{hb44} \\
+    Density of NaCl        & $\rho$       & 2.17  & \unit{\gram\per\cubic\cm} & \cite{halite} \\
+    Molar mass of NaCl     & $M$          & 58.44 & \unit{\gram\per\mole} & \cite{ciaaw} \\
+    Cohesive energy of NaCl & $E_\text{coh}$ & 187 & \unit{\kcal\per\mole} & [given] \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\section{Solution}
+
+\subsection{Amount of rocksalt formed}
+
+One teaspoon is $V_\text{s} = \qty{4.9}{\milli\litre} = \qty{4.9}{\cubic\cm}$, so
+\begin{equation}
+  n_\text{NaCl} = \frac{\rho V_\text{s}}{M}
+  = \frac{\qty{2.17}{\gram\per\cubic\cm} \times \qty{4.9}{\cubic\cm}}
+         {\qty{58.44}{\gram\per\mole}}
+  = \qty{0.182}{\mole}.
+  \label{eq:moles}
+\end{equation}
+
+\subsection{Energy released}
+
+The cohesive energy is the energy required to break the crystal into free
+neutral atoms,
+\begin{equation}
+  E_\text{coh} = \left(E_\text{Na} + E_\text{Cl}\right) - E_\text{NaCl}
+  = \qty{187}{\kcal\per\mole},
+  \label{eq:ecoh}
+\end{equation}
+so exactly this much is liberated per mole when the crystal forms from those
+same free atoms:
+\begin{equation}
+  Q = n_\text{NaCl}\,E_\text{coh}
+  = \qty{0.182}{\mole} \times \qty{187}{\kcal\per\mole}
+  = \qty{34.0}{\kcal} = \qty{142}{\kilo\joule}.
+  \label{eq:Q}
+\end{equation}
+
+\subsection{Amount of air in the room}
+
+With $V = \qty{50}{\meter\squared} \times \qty{3}{\meter} =
+\qty{150}{\cubic\meter}$, the ideal gas law gives~\cite{codata}
+\begin{equation}
+  n_\text{air} = \frac{PV}{RT_0}
+  = \frac{\qty{101325}{\pascal} \times \qty{150}{\cubic\meter}}
+         {\qty{8.314}{\joule\per\mole\per\kelvin} \times \qty{300}{\kelvin}}
+  = \qty{6.09e3}{\mole}.
+  \label{eq:nair}
+\end{equation}
+
+\subsection{Temperature rise}
+
+Heating that air at constant volume,
+\begin{equation}
+  \Delta T = \frac{Q}{n_\text{air} C_V}
+  = \frac{\qty{1.424e5}{\joule}}
+         {\qty{6.09e3}{\mole} \times \qty{20.8}{\joule\per\mole\per\kelvin}}
+  \quad\Longrightarrow\quad
+  \boxed{\;\Delta T \approx \qty{1.1}{\kelvin}\;}
+  \label{eq:answer}
+\end{equation}
+
+\section{Discussion}
+
+A teaspoon of salt is only $\sim\!\qty{0.18}{\mole}$, but the room holds
+$\sim\!\qty{6.1e3}{\mole}$ of air, over four orders of magnitude more. The
+$\qty{187}{\kcal\per\mole}$ of cohesive energy is enormous on an atomic scale
+($\approx\qty{8}{\electronvolt}$ per formula unit). Despite the small quantity
+of reactants compared to the room volume, the reaction is so exothermic that the
+temperature change is still noticeable on the latter scale.
+
+One modelling choice is significant to the magnitude of the answer: whether the
+air is heated at constant volume or constant pressure. A sealed room fixes $V$,
+so $C_V$ is the appropriate heat capacity. A room vented to the outside would
+instead expand against the atmosphere and require $C_P = \tfrac{7}{2}R =
+\qty{29.1}{\joule\per\mole\per\kelvin}$, lowering the answer to $\Delta T
+\approx \qty{0.8}{\kelvin}$.
+
+\clearpage
+\begin{thebibliography}{9}
+\raggedright
+
+\bibitem{ciaaw}
+IUPAC Commission on Isotopic Abundances and Atomic Weights,
+``Abridged Standard Atomic Weights 2024.''
+$A_\mathrm{r}^{\circ}(\mathrm{Na}) = 22.990$,
+$A_\mathrm{r}^{\circ}(\mathrm{Cl}) = 35.45$.
+\url{https://www.ciaaw.org/abridged-atomic-weights.htm}
+(accessed 26 July 2026).
+
+\bibitem{halite}
+``Halite, NaCl,'' \emph{Handbook of Mineralogy},
+Mineral Data Publishing (2001--2005).
+$D(\text{meas.}) = \qty{2.168}{\gram\per\cubic\cm}$.
+\url{https://www.handbookofmineralogy.org/pdfs/halite.pdf}
+(accessed 26 July 2026).
+
+\bibitem{hb44}
+National Institute of Standards and Technology,
+\emph{Specifications, Tolerances, and Other Technical Requirements for
+Weighing and Measuring Devices}, NIST Handbook~44, 2026 edition,
+Appendix~C. One measuring teaspoon is $1\tfrac{1}{3}$ fluid drams
+(p.~C-26) and one fluid dram is \qty{3.696691}{\milli\litre} (p.~C-16),
+giving \qty{4.9289}{\milli\litre}.
+\url{https://doi.org/10.6028/NIST.HB.44-2026}
+(accessed 26 July 2026).
+
+\bibitem{codata}
+National Institute of Standards and Technology,
+``Fundamental Physical Constants --- Complete Listing,''
+2022 CODATA adjustment.
+$R = 8.314\,462\,618\ldots\ \mathrm{J\,mol^{-1}\,K^{-1}}$ and
+standard atmosphere $= \qty{101325}{\pascal}$, both exact.
+\url{https://physics.nist.gov/cuu/Constants/Table/allascii.txt}
+(accessed 26 July 2026).
+
+\bibitem{feynman}
+R.~P. Feynman, R.~B. Leighton, and M.~Sands,
+\emph{The Feynman Lectures on Physics}, New Millennium Edition,
+Vol.~I, Ch.~40, \S40--5, ``The specific heats of gases,''
+for the rigid-diatomic result $C_V = \tfrac{5}{2}R$.
+\url{https://www.feynmanlectures.caltech.edu/I\_40.html}
+(accessed 26 July 2026).
+
+\end{thebibliography}
+
+\end{document}

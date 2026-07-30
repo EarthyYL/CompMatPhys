@@ -1,0 +1,48 @@
+&CONTROL
+   calculation      = 'scf'
+   verbosity        = 'low'
+   tstress          = .true.
+   tprnfor          = .true.
+   outdir           = '.'
+   prefix           = 'AlFCC'
+   pseudo_dir       = '/home/yluo/ASE/pseudopotential-library'
+/
+&SYSTEM
+   ecutwfc          = 40.0
+   ecutrho          = 160.0
+   occupations      = 'smearing'
+   degauss          = 0.005
+   smearing         = 'mv'
+   ntyp             = 1
+   nat              = 4
+   ibrav            = 0
+/
+&ELECTRONS
+   conv_thr         = 1e-08
+   mixing_beta      = 0.7
+/
+&IONS
+/
+&CELL
+/
+&FCP
+/
+&RISM
+/
+ATOMIC_SPECIES
+Al 26.9815385 Al.pbe-n-kjpaw_psl.1.0.0.UPF
+
+K_POINTS automatic
+15 15 15  0 0 0
+
+CELL_PARAMETERS angstrom
+4.04958000000000 0.00000000000000 0.00000000000000
+0.00000000000000 4.04958000000000 0.00000000000000
+0.00000000000000 0.00000000000000 4.04958000000000
+
+ATOMIC_POSITIONS angstrom
+Al 0.0000000000 0.0000000000 0.0000000000  
+Al 0.0000000000 2.0247900000 2.0247900000  
+Al 2.0247900000 0.0000000000 2.0247900000  
+Al 2.0247900000 2.0247900000 0.0000000000  
+

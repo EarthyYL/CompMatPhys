@@ -1,0 +1,145 @@
+
+     Program PWSCF v.7.5 starts on 16Jul2026 at 20:56:17 
+
+     This program is part of the open-source Quantum ESPRESSO suite
+     for quantum simulation of materials; please cite
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 21 395502 (2009);
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 29 465901 (2017);
+         "P. Giannozzi et al., J. Chem. Phys. 152 154105 (2020);
+          URL http://www.quantum-espresso.org", 
+     in publications or presentations arising from this work. More details at
+     http://www.quantum-espresso.org/quote
+
+     Parallel version (MPI), running on     1 processors
+
+     MPI processes distributed on     1 nodes
+     11445 MiB available memory on the printing compute node when the environment starts
+
+     Reading input from espresso.pwi
+Warning: card &FCP ignored
+Warning: card &RISM ignored
+
+     Current dimensions of program PWSCF are:
+     Max number of different atomic species (ntypx) = 10
+     Max number of k-points (npk) =  40000
+     Max angular momentum in pseudopotentials (lmaxx) =  4
+     file Pb.pbe-dn-kjpaw_psl.0.2.2.UPF: wavefunction(s)  6S renormalized
+     file O.pbe-n-kjpaw_psl.0.1.UPF: wavefunction(s)  2P renormalized
+     Message from routine setup:
+     using ibrav=0 with symmetry is DISCOURAGED, use correct ibrav instead
+
+     Subspace diagonalization in iterative solution of the eigenvalue problem:
+     a serial algorithm will be used
+
+
+     G-vector sticks info
+     --------------------
+     sticks:   dense  smooth     PW     G-vecs:    dense   smooth      PW
+     Sum        1085    1085    305                33643    33643    5121
+
+     Using Slab Decomposition
+
+
+
+     bravais-lattice index     =            0
+     lattice parameter (alat)  =       7.5105  a.u.
+     unit-cell volume          =     535.3237 (a.u.)^3
+     number of atoms/cell      =            4
+     number of atomic types    =            2
+     number of electrons       =        40.00
+     number of Kohn-Sham states=           24
+     kinetic-energy cutoff     =      60.0000  Ry
+     charge density cutoff     =     240.0000  Ry
+     scf convergence threshold =      1.0E-08
+     mixing beta               =       0.7000
+     number of iterations used =            8  plain     mixing
+     energy convergence thresh.=      1.0E-04
+     force convergence thresh. =      1.0E-03
+     press convergence thresh. =      5.0E-01
+     Exchange-correlation= SLA  PW   PBX  PBC
+                           (   1   4   3   4   0   0   0)
+     nstep                     =           50
+
+
+     celldm(1)=   7.510528  celldm(2)=   0.000000  celldm(3)=   0.000000
+     celldm(4)=   0.000000  celldm(5)=   0.000000  celldm(6)=   0.000000
+
+     crystal axes: (cart. coord. in units of alat)
+               a(1) = (   1.000000   0.000000   0.000000 )  
+               a(2) = (   0.000000   1.000000   0.000000 )  
+               a(3) = (   0.000000   0.000000   1.263587 )  
+
+     reciprocal axes: (cart. coord. in units 2 pi/alat)
+               b(1) = (  1.000000  0.000000  0.000000 )  
+               b(2) = (  0.000000  1.000000  0.000000 )  
+               b(3) = (  0.000000  0.000000  0.791398 )  
+
+
+     PseudoPot. # 1 for Pb read from file:
+     /home/yluo/ASE/05a_geo_opt/src/Pb.pbe-dn-kjpaw_psl.0.2.2.UPF
+     MD5 check sum: 9d431e6316058b74ade52399a6cf67da
+     Pseudo is Projector augmented-wave + core cor, Zval = 14.0
+     Generated using "atomic" code by A. Dal Corso  v.5.0.99 svn rev. 10869
+     Shape of augmentation charge: PSQ
+     Using radial grid of 1281 points,  6 beta functions with: 
+                l(1) =   0
+                l(2) =   0
+                l(3) =   1
+                l(4) =   1
+                l(5) =   2
+                l(6) =   2
+     Q(r) pseudized with 0 coefficients 
+
+
+     PseudoPot. # 2 for O  read from file:
+     /home/yluo/ASE/05a_geo_opt/src/O.pbe-n-kjpaw_psl.0.1.UPF
+     MD5 check sum: 0234752ac141de4415c5fc33072bef88
+     Pseudo is Projector augmented-wave + core cor, Zval =  6.0
+     Generated using "atomic" code by A. Dal Corso  v.5.0.99 svn rev. 10869
+     Shape of augmentation charge: BESSEL
+     Using radial grid of 1095 points,  4 beta functions with: 
+                l(1) =   0
+                l(2) =   0
+                l(3) =   1
+                l(4) =   1
+     Q(r) pseudized with 0 coefficients 
+
+
+     atomic species   valence    mass     pseudopotential
+     Pb               14.00   207.20000     Pb( 1.00)
+     O                 6.00    15.99900     O ( 1.00)
+
+     16 Sym. Ops., with inversion, found ( 8 have fractional translation)
+
+
+
+   Cartesian axes
+
+     site n.     atom                  positions (alat units)
+         1        Pb     tau(   1) = (   0.0000000   0.5000000   0.2970693  )
+         2        Pb     tau(   2) = (   0.5000000   0.0000000   0.9665177  )
+         3        O      tau(   3) = (   0.0000000   0.0000000   0.0000000  )
+         4        O      tau(   4) = (   0.5000000   0.5000000   0.0000000  )
+
+     number of k points=    18  Marzari-Vanderbilt smearing, width (Ry)=  0.0050
+                       cart. coord. in units 2pi/alat
+        k(    1) = (   0.0000000   0.0000000   0.0000000), wk =   0.0160000
+        k(    2) = (   0.0000000   0.0000000   0.1582796), wk =   0.0320000
+        k(    3) = (   0.0000000   0.0000000   0.3165591), wk =   0.0320000
+        k(    4) = (   0.0000000   0.2000000   0.0000000), wk =   0.0640000
+        k(    5) = (   0.0000000   0.2000000   0.1582796), wk =   0.1280000
+        k(    6) = (   0.0000000   0.2000000   0.3165591), wk =   0.1280000
+        k(    7) = (   0.0000000   0.4000000   0.0000000), wk =   0.0640000
+        k(    8) = (   0.0000000   0.4000000   0.1582796), wk =   0.1280000
+        k(    9) = (   0.0000000   0.4000000   0.3165591), wk =   0.1280000
+        k(   10) = (   0.2000000   0.2000000   0.0000000), wk =   0.0640000
+        k(   11) = (   0.2000000   0.2000000   0.1582796), wk =   0.1280000
+        k(   12) = (   0.2000000   0.2000000   0.3165591), wk =   0.1280000
+        k(   13) = (   0.2000000   0.4000000   0.0000000), wk =   0.1280000
+        k(   14) = (   0.2000000   0.4000000   0.1582796), wk =   0.2560000
+        k(   15) = (   0.2000000   0.4000000   0.3165591), wk =   0.2560000
+        k(   16) = (   0.4000000   0.4000000   0.0000000), wk =   0.0640000
+        k(   17) = (   0.4000000   0.4000000   0.1582796), wk =   0.1280000
+        k(   18) = (   0.4000000   0.4000000   0.3165591), wk =   0.1280000
+
+     Dense  grid:    33643 G-vectors     FFT dimensions: (  40,  40,  48)

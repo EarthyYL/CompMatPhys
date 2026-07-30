@@ -1,0 +1,47 @@
+&CONTROL
+   calculation      = 'scf'
+   verbosity        = 'low'
+   tstress          = .true.
+   tprnfor          = .true.
+   outdir           = '.'
+   prefix           = 'NaCl'
+   pseudo_dir       = '/home/yluo/ASE/pseudopotential-library'
+/
+&SYSTEM
+   nat              = 2
+   ntyp             = 2
+   ecutwfc          = 60.0
+   ecutrho          = 360.0
+   occupations      = 'smearing'
+   degauss          = 0.005
+   smearing         = 'mv'
+   ibrav            = 0
+/
+&ELECTRONS
+   conv_thr         = 1e-08
+   mixing_beta      = 0.7
+/
+&IONS
+/
+&CELL
+/
+&FCP
+/
+&RISM
+/
+ATOMIC_SPECIES
+Na 22.98976928 na_pbe_v1.5.uspp.F.UPF
+Cl 35.45 cl_pbe_v1.4.uspp.F.UPF
+
+K_POINTS automatic
+15 15 15  0 0 0
+
+CELL_PARAMETERS angstrom
+0.00000000000000 2.82028000000000 2.82028000000000
+2.82028000000000 0.00000000000000 2.82028000000000
+2.82028000000000 2.82028000000000 0.00000000000000
+
+ATOMIC_POSITIONS angstrom
+Na 0.0000000000 0.0000000000 0.0000000000  
+Cl 2.8202800000 2.8202800000 2.8202800000  
+

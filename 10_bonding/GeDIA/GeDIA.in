@@ -1,0 +1,46 @@
+&CONTROL
+   calculation      = 'scf'
+   verbosity        = 'low'
+   tstress          = .true.
+   tprnfor          = .true.
+   outdir           = '.'
+   prefix           = 'GeDIA'
+   pseudo_dir       = '/home/yluo/ASE/pseudopotential-library'
+/
+&SYSTEM
+   ecutwfc          = 60.0
+   ecutrho          = 360.0
+   occupations      = 'smearing'
+   degauss          = 0.005
+   smearing         = 'mv'
+   ntyp             = 1
+   nat              = 2
+   ibrav            = 0
+/
+&ELECTRONS
+   conv_thr         = 1e-08
+   mixing_beta      = 0.7
+/
+&IONS
+/
+&CELL
+/
+&FCP
+/
+&RISM
+/
+ATOMIC_SPECIES
+Ge 72.63 ge_pbe_v1.4.uspp.F.UPF
+
+K_POINTS automatic
+15 15 15  0 0 0
+
+CELL_PARAMETERS angstrom
+0.00000000000000 2.82867500000000 2.82867500000000
+2.82867500000000 0.00000000000000 2.82867500000000
+2.82867500000000 2.82867500000000 0.00000000000000
+
+ATOMIC_POSITIONS angstrom
+Ge 0.0000000000 0.0000000000 0.0000000000  
+Ge 1.4143375000 1.4143375000 1.4143375000  
+

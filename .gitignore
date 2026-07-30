@@ -2,12 +2,8 @@
 *.pyc
 *.UPF
 *.cif
-*.in
-*.out
 *.err
 *.aux
-*.pwo
-*.pwi
 *.xml
 *.log
 *.fls

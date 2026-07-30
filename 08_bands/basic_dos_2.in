@@ -1,0 +1,9 @@
+&PROJWFC
+ prefix='basic',
+ outdir='.',
+ Emin=-6,
+ Emax=17,
+ DeltaE=0.05,
+ filpdos='silicon',
+ filproj='silicon'
+/

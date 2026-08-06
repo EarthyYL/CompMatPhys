@@ -1,0 +1,52 @@
+&CONTROL
+   calculation      = 'scf'
+   verbosity        = 'low'
+   tstress          = .true.
+   tprnfor          = .true.
+   outdir           = '.'
+   prefix           = 'Si_Full'
+   pseudo_dir       = '/home/yluo/CompMatPhys/10_bonding'
+/
+&SYSTEM
+   ecutwfc          = 60.0
+   ecutrho          = 360.0
+   occupations      = 'smearing'
+   degauss          = 0.005
+   smearing         = 'mv'
+   ntyp             = 1
+   nat              = 8
+   ibrav            = 0
+/
+&ELECTRONS
+   conv_thr         = 1e-08
+   mixing_beta      = 0.7
+/
+&IONS
+/
+&CELL
+/
+&FCP
+/
+&RISM
+/
+ATOMIC_SPECIES
+Si 28.085 Si.pbe-n-kjpaw_psl.1.0.0.UPF
+
+K_POINTS automatic
+7 7 7  0 0 0
+
+CELL_PARAMETERS angstrom
+5.43070000000000 0.00000000000000 0.00000000000000
+0.00000000000000 5.43070000000000 0.00000000000000
+0.00000000000000 0.00000000000000 5.43070000000000
+
+ATOMIC_POSITIONS angstrom
+Si 0.0000000000 0.0000000000 0.0000000000  
+Si 0.0000000000 2.7153500000 2.7153500000  
+Si 2.7153500000 0.0000000000 2.7153500000  
+Si 2.7153500000 2.7153500000 0.0000000000  
+Si 4.0730250000 4.0730250000 1.3576750000  
+Si 4.0730250000 1.3576750000 4.0730250000  
+Si 1.3576750000 4.0730250000 4.0730250000  
+Si 1.3576750000 1.3576750000 1.3576750000  
+

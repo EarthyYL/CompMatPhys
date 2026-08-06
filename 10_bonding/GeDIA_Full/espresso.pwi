@@ -1,0 +1,52 @@
+&CONTROL
+   calculation      = 'scf'
+   verbosity        = 'low'
+   tstress          = .true.
+   tprnfor          = .true.
+   outdir           = '.'
+   prefix           = 'GeDIA_Full'
+   pseudo_dir       = '/home/yluo/CompMatPhys/10_bonding'
+/
+&SYSTEM
+   ecutwfc          = 60.0
+   ecutrho          = 360.0
+   occupations      = 'smearing'
+   degauss          = 0.005
+   smearing         = 'mv'
+   ntyp             = 1
+   nat              = 8
+   ibrav            = 0
+/
+&ELECTRONS
+   conv_thr         = 1e-08
+   mixing_beta      = 0.7
+/
+&IONS
+/
+&CELL
+/
+&FCP
+/
+&RISM
+/
+ATOMIC_SPECIES
+Ge 72.63 ge_pbe_v1.4.uspp.F.UPF
+
+K_POINTS automatic
+7 7 7  0 0 0
+
+CELL_PARAMETERS angstrom
+5.65735000000000 0.00000000000000 0.00000000000000
+0.00000000000000 5.65735000000000 0.00000000000000
+0.00000000000000 0.00000000000000 5.65735000000000
+
+ATOMIC_POSITIONS angstrom
+Ge 0.0000000000 0.0000000000 0.0000000000  
+Ge 0.0000000000 2.8286750000 2.8286750000  
+Ge 2.8286750000 0.0000000000 2.8286750000  
+Ge 2.8286750000 2.8286750000 0.0000000000  
+Ge 4.2430125000 4.2430125000 1.4143375000  
+Ge 4.2430125000 1.4143375000 4.2430125000  
+Ge 1.4143375000 4.2430125000 4.2430125000  
+Ge 1.4143375000 1.4143375000 1.4143375000  
+

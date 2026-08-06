@@ -4,7 +4,7 @@ from ase.units import Ry
 from pathlib import Path
 
 
-name = "NaCl_Full"
+name = "Si_Full"
 result_file = ("10_bonding" / Path("results.csv")).resolve()
 cif_path = ("10_bonding" / Path(f"{name}.cif")).resolve()
 atoms = read(f"{cif_path}")
@@ -14,7 +14,8 @@ pseudopotentials = {"Al": "Al.pbe-n-kjpaw_psl.1.0.0.UPF",
                     "Fe": "Fe.pbe-spn-kjpaw_psl.0.2.1.UPF",
                     "Cl": "Cl.pbe-n-kjpaw_psl.0.1.UPF",
                     "Na": "Na.pbe-spn-kjpaw_psl.0.2.UPF",
-                    "Ge": 'ge_pbe_v1.4.uspp.F.UPF'}
+                    "Ge": 'ge_pbe_v1.4.uspp.F.UPF',
+                    "Si": 'Si.pbe-n-kjpaw_psl.1.0.0.UPF'}
 
 input_data = {
     'control': {

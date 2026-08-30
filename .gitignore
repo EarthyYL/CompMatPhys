@@ -15,6 +15,7 @@
 *.txt
 *.gif
 *.mpg
+*.out
 *paw.txt
 *.pdos*
 *.*ZoneIdentifier
